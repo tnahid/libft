@@ -14,18 +14,22 @@
 
 char	*ft_substr(const char *str, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t	s_len;
 	char	*sub;
 
-	i = 0;
+	if (!str)
+		return (NULL);
+	s_len = ft_strlen(str);
+	if (start >= s_len)
+	{
+		sub = ft_strdup("");
+		return (sub);
+	}
+	if (len > s_len - start)
+		len = s_len - start;
 	sub = (char *)malloc(len + 1);
 	if (sub == NULL)
 		return (NULL);
-	while (i < len)
-	{
-		sub[i] = str[start + i];
-		i++;
-	}
-	sub[i] = '\0';
+	ft_strlcpy(sub, str + start, len + 1);
 	return (sub);
 }

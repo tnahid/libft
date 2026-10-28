@@ -15,18 +15,16 @@
 static size_t	calc_len(long n)
 {
 	size_t	i;
-	long	pwr;
 
 	i = 1;
-	pwr = 1;
 	if (n < 0)
 	{
 		n = -n;
 		i++;
 	}
-	while (n / pwr >= 10)
+	while (n >= 10)
 	{
-		pwr *= 10;
+		n /= 10;
 		i++;
 	}
 	return (i);
@@ -47,7 +45,7 @@ static void	fill_str(char *str, long n)
 	pwr = 1;
 	while (n / pwr >= 10)
 		pwr *= 10;
-	while (pwr >= 1)
+	while (pwr > 0)
 	{
 		str[i] = n / pwr + '0';
 		n %= pwr;

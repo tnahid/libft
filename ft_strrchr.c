@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *str, int c)
 	p = NULL;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			p = (char *)&str[i];
 		i++;
 	}
-	if (str[i] == c)
+	if (str[i] == (char)c)
 		p = (char *)&str[i];
 	return (p);
 }
