@@ -6,7 +6,7 @@
 /*   By: tnahid <tnahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:16:39 by tnahid            #+#    #+#             */
-/*   Updated: 2026/10/16 12:16:40 by tnahid           ###   ########.fr       */
+/*   Updated: 2026/10/28 23:13:15 by tnahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	while (i < len && str[i])
 	{
 		j = 0;
-		while (i + j < len && str[i + j] && to_find[j] && str[i + j] == to_find[j])
+		while (i + j < len && str[i + j] && to_find[j]
+			&& str[i + j] == to_find[j])
 			j++;
 		if (!to_find[j])
 			return ((char *)&str[i]);
