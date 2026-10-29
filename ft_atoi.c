@@ -6,7 +6,7 @@
 /*   By: tnahid <tnahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 23:04:36 by tnahid            #+#    #+#             */
-/*   Updated: 2026/10/28 23:13:57 by tnahid           ###   ########.fr       */
+/*   Updated: 2026/10/29 11:20:13 by tnahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		n = n * 10 + str[i] - '0';
+		if (s > 0)
+			n = n * 10 + (str[i] - '0');
+		else
+			n = n * 10 - (str[i] - '0');
 		i++;
 	}
-	return (n * s);
+	return (n);
 }
