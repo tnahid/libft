@@ -6,7 +6,7 @@
 /*   By: tnahid <tnahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 23:09:08 by tnahid            #+#    #+#             */
-/*   Updated: 2026/10/28 23:09:31 by tnahid           ###   ########.fr       */
+/*   Updated: 2026/10/29 15:25:53 by tnahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	tmp = *lst;
-	if (!tmp)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
+	tmp = *lst;
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
