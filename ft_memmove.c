@@ -21,8 +21,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	i = 0;
 	s = (const unsigned char *)src;
 	d = (unsigned char *)dst;
-	if (n == 0)
-		return (dst);
 	while (i < n)
 	{
 		if (s < d)
